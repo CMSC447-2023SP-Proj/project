@@ -47,18 +47,36 @@ const Register = () => {
                 <div className="right">
                 <h1>Register</h1>
                 <form>
-                    <input type="text" placeholder="Username" />
-                    <input type="password" placeholder="Password" />
-                    <input type="email" placeholder="Email" />
-                    <input type="text" placeholder="Name" />
-                    <button>Register</button>
+                    <input 
+                      type="text" 
+                      placeholder="Username"
+                      name="username"
+                      onChange={handleChange} 
+                    />
+                    <input 
+                      type="password" 
+                      placeholder="Password"
+                      name="email"
+                      onChange={handleChange} 
+                    />
+                    <input 
+                      type="email" 
+                      placeholder="Email" 
+                      name="name"
+                      onChange={handleChange}
+                    />
+                    <input 
+                      type="text" 
+                      placeholder="Name"
+                      name="name"
+                      onChange={handleChange} 
+                    />
+                    {err && err}
+                    <button onClick={handleClick}>Register</button>
                 </form>
-                </div>
-            </div>
+              </div>
+          </div>
         </div>
-
     );
-
-
 };
 export default Register;
