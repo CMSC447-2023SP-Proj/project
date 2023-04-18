@@ -1,11 +1,11 @@
 import { createBrowserRouter, Navigate, Outlet, RouterProvider } from "react-router-dom";
-import Login from "./screens/log/Login";
-import Register from "./screens/register/Register";
+import Login from "./pages/log/Login";
+import Register from "./pages/register/Register";
 import Navbar from "./components/navbar/Navbar";
 import LeftBar from "./components/leftbar/LeftBar";
 import RightBar from "./components/rightbar/Rightbar";
-import Home from "./screens/home/Home";
-import Profile from "./screens/Profile/Profile";
+import Home from "./pages/home/Home";
+import Profile from "./pages/Profile/Profile";
 import "./style.scss"
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
