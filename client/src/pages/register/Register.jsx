@@ -1,19 +1,20 @@
 import { Link } from "react-router-dom";
 import "./register.scss";
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const Register = () => {
     const [inputs, setInputs] = useState({
       username: "",
-      email: "",
       password: "",
+      email: "",
       name: "",
     });
     const [err, setErr] = useState(null);
   
     const handleChange = (e) => {
       setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+      console.log(inputs);
     };
   
     const handleClick = async (e) => {
@@ -56,13 +57,13 @@ const Register = () => {
                     <input 
                       type="password" 
                       placeholder="Password"
-                      name="email"
+                      name="password"
                       onChange={handleChange} 
                     />
                     <input 
                       type="email" 
                       placeholder="Email" 
-                      name="name"
+                      name="email"
                       onChange={handleChange}
                     />
                     <input 
@@ -78,5 +79,5 @@ const Register = () => {
           </div>
         </div>
     );
-};
+}
 export default Register;

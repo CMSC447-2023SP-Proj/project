@@ -1,4 +1,5 @@
 import express from "express";
+const app = express();
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
 import postRoutes from "./routes/posts.js";
@@ -8,7 +9,6 @@ import relationshipRoutes from "./routes/relationships.js";
 import cors from "cors";
 import multer from "multer";
 import cookieParser from "cookie-parser";
-const app = express();
 
 //middlewares
 app.use((req, res, next) => {
@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:3002",
+    origin: "http://localhost:3000",
   })
 );
 app.use(cookieParser());
