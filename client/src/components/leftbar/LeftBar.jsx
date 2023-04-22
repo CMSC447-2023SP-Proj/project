@@ -4,6 +4,7 @@ import Groups from "../../assets/people.png";
 import Market from "../../assets/shop.png";
 import Watch from "../../assets/watching-a-movie.png";
 import Memories from "../../assets/selfie.png";
+import Settings from "../../assets/settings.png";
 import Events from "../../assets/planner.png";
 import Gaming from "../../assets/console.png";
 import Gallery from "../../assets/gallery.png";
@@ -14,6 +15,8 @@ import Tutorials from "../../assets/meeting.png";
 import Courses from "../../assets/video-tutorials.png";
 import { AuthContext } from "../../context/authContext";
 import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 const LeftBar = () => {
 
    const { currentUser } = useContext(AuthContext);
@@ -46,6 +49,12 @@ const LeftBar = () => {
          <div className="item">
             <img src={Memories} alt=""/>
             <span>Memories</span>
+         </div>
+         <div className="item">
+                        <img src={Settings} alt="" />
+                        <Link to="/settings">
+                            <button>Settings</button>
+                        </Link>
          </div>
 
          </div>
