@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Comments from "../comments/Comments";
 import { useState } from "react";
 import moment from "moment";
+import Dog from "../../assets/doglogo.png"
 import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
 import { makeRequest } from "../../axios";
 import { useContext } from "react";
@@ -64,7 +65,7 @@ const Post = ({ post }) => {
       <div className="container">
         <div className="user">
           <div className="userInfo">
-            <img src={"/upload/"+post.profilePic} alt="" />
+            <img src={Dog} alt="" />
             <div className="details">
               <Link
                 to={`/profile/${post.userId}`}
