@@ -1,39 +1,49 @@
 import { useContext } from "react";
-import "./stories.scss";
-import { AuthContext } from "../../context/authContext";
-import { useQuery } from "@tanstack/react-query";
-import { makeRequest } from "../../axios";
+import "./stories.scss"
+import { AuthContext } from "../../context/authContext"
 
-const Stories = () => {
-  const { currentUser } = useContext(AuthContext);
 
-  const { isLoading, error, data } = useQuery(["stories"], () =>
-    makeRequest.get("/stories").then((res) => {
-      return res.data;
-    })
-  );
+const Stories = () =>{
+    const {currentUser} = useContext(AuthContext)
 
-  //TODO Add story using react-query mutations and use upload function.
+    //Temporary dummy data
+     const stories = [
+        { id:1,
+          name: "Chip",
+          img:"https://pbs.twimg.com/profile_images/1190390882408763392/uBKRk2Bv_400x400.jpg"
 
-  return (
-    <div className="stories">
-      <div className="story">
-        <img src={"/upload/" + currentUser.profilePic} alt="" />
-        <span>{currentUser.name}</span>
-        <button>+</button>
-      </div>
-      {error
-        ? "Something went wrong"
-        : isLoading
-        ? "loading"
-        : data.map((story) => (
-            <div className="story" key={story.id}>
-              <img src={story.img} alt="" />
-              <span>{story.name}</span>
+        },
+        { id:2,
+            name: "Pupper Lang",
+            img:"https://images.pexels.com/photos/5122188/pexels-photo-5122188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+
+          },
+          { id:3 ,
+            name: "Apollo Breed",
+            img:"https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
+
+          },
+
+     ];
+
+    return(
+        <div className="stories">
+             <div className="story">
+                <img src={currentUser.profilePic} alt="" />
+                <span>{currentUser.name}</span>
+                <button>+</button>
+                </div> 
+            {stories.map(story=>(
+               <div className="story" key={story.id}>
+                <img src={story.img} alt="" />
+                <span>{story.name}</span>
+
+                </div> 
+            ))}
+
             </div>
-          ))}
-    </div>
-  );
-};
+    )
+ 
 
-export default Stories;
+}
+export default Stories
