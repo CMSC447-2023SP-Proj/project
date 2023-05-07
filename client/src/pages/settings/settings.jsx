@@ -1,12 +1,11 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/authContext";
+import { updateUserContext } from "../../context/settingsContext";
 import "./settings.scss";
 
 const Settings = () => {
     const [inputs, setInputs] = useState({
-        username: "",
-        password: "",
+        newUsername: "",
     });
     const [err, setErr] = useState(null);
 
@@ -14,13 +13,14 @@ const Settings = () => {
 
     const handleChange = (e) => {
         setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+        console.log(inputs);
     };
-    const { login } = useContext(AuthContext);
+    const { updateUsername } = useContext(updateUserContext);
 
-    const handleLogin = async (e) => {
+    const handleUserUpdate = async (e) => {
         e.preventDefault();
         try {
-            await login(inputs);
+            await UpdateUser(inputs);
             navigate("/")
         } catch (err) {
             setErr(err.response.data);
@@ -34,7 +34,19 @@ const Settings = () => {
                     <h1>Settings</h1>
                     <p>
                         bbbooboooedfjsfj,
-                        alias totam numquam ipsa exercitationem dignissimos, error nam,
+                        alias bazinga numquam ipsa exercitationem dignissimos, error nam,
+                        consequatur.
+                    </p>
+                    <span>Don't you have an account?</span>
+                    <Link to="/register">
+                        <button>Register</button>
+                    </Link>
+                </div>
+                <div className="left">
+                    <h1>Settings</h1>
+                    <p>
+                        bbbooboooedfjsfj,
+                        alias bazinga numquam ipsa exercitationem dignissimos, error nam,
                         consequatur.
                     </p>
                     <span>Don't you have an account?</span>
@@ -47,18 +59,12 @@ const Settings = () => {
                     <form>
                         <input
                             type="text"
-                            placeholder="Username"
+                            placeholder="New Username"
                             name="username"
                             onChange={handleChange}
                         />
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            name="password"
-                            onChange={handleChange}
-                        />
                         {err && err}
-                        <button onClick={handleLogin}>Login</button>
+                        <button onClick={handleUserUpdate}>Update Username</button>
                     </form>
                 </div>
             </div>

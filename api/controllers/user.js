@@ -40,3 +40,26 @@ export const updateUser = (req, res) => {
     );
   });
 };
+
+
+
+
+export const updateUsername = (req, res) => {
+    const token = req.cookies.accessToken;
+    if (!token) return res.status(401).json("Not authenticated!");
+
+    //check if name already exists
+    const q = "SELECT COUNT(*) FROM  users WHERE username = ?";
+    const ret = db.query(q, [req.body.newUsername]);
+    if (ret > 0)
+        return res.status(406).json("This username is aleady taken!");
+    db.query("UPDATE users SET username = ? WHERE id = ?", [req.body.newUsername, token.id],
+        (err, data) => {
+            if (err) res.status(500).json(err);
+            if (data.affectedRows > 0) return res.json("Updated Username!");
+            return res.status(403).json("name change error");
+        });
+};
+
+
+

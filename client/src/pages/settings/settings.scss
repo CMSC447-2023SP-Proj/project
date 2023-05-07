@@ -1,99 +1,90 @@
-.register{
-  height: 100vh;
-  background-color: rgb(255,215,0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-     .card{
-       width: 50%;
-       display: flex;
-       flex-direction: row-reverse;
-       background-color: white;
-       border-radius: 10px;
-       min-height: 450px;
-       overflow: hidden;
-       justify-content: center;
-         .left{
-           flex: auto;
-           background: url("https://images.pexels.com/photos/6579102/pexels-photo-6579102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") 
-             center;
-           background-size: cover;
-           padding: 10px;
-           display: flex;
-           flex-direction: column;
-           gap: 15px;
-           color: white;
-             
-            h1{
-             color : black;
-             gap: 30px;
-             font-size: 50px;
-             line-height: 50px;
-             justify-content: center;
- 
+.settings {
+    height: 100vh;
+    background-color: rgb(255,215,0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .card {
+        width: 50%;
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+        min-height: 450px;
+        overflow: hidden;
+        justify-content: center;
+
+        .top {
+            font-size: 50;
+            line-height: 50px;
+            justify-content: center;
+        }
+
+        .left {
+
+
+            h1 {
+                font-size: 50px;
+                line-height: 50px;
+                justify-content: center;
             }
-            p{
-              font-size: 20px;
-              padding: 35px;
-              color: whitesmoke;
-              justify-content: center;
+
+            p {
             }
-            span{
-              
-             font-size: 14px;
+
+            span {
+                font-size: 12px;
             }
-            button{
-             width: 50%;
-             padding: 10px;
-             border: none;
-             background-color:white;
-             color: orange;
-             font-weight: bold;
-             cursor: pointer;
-             
-            } 
-         }
-         .right{
-             flex: auto;  
-             padding: 50px;
-             
-             display: flex;
-             flex-direction: column;
-             gap: 25px;
-             justify-content: center;
-             background-color: lightgray;
-             h1{
-             font-size: 50px;
-             color:black;
-             justify-content: center;
- 
-             }
-             form{
-               
-               display: flex;
-               flex-direction: column;
-               gap: 15px;
-               input{
-                   
-                   
-               border: none;
-               border-bottom: 1px solid gray;
-               padding: 20px 10px;
-               justify-content: center;
-               }
-               button{
-                   
-                     
-                 width: 50%;
-                 padding: 10px;
-                 border: none;
-                 background-color:black;
-                 color: white;
-                 font-weight: bold;
-                 cursor: pointer;
-                 justify-content: center;
-                 }
-             }
-         }
-     }
- }
+
+            button {
+                width: 50%;
+                padding: 10px;
+                border: none;
+                background-color: white;
+                color: orange;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+
+        .right {
+            flex: auto;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            justify-content: center;
+            background-color: lightgray;
+
+            h1 {
+                font-size: 50px;
+                color: black;
+                justify-content: center;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                input {
+                    border: none;
+                    border-bottom: 1px solid gray;
+                    padding: 20px 10px;
+                    justify-content: center;
+                }
+
+                button {
+                    width: 50%;
+                    padding: 10px;
+                    border: none;
+                    background-color: black;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
