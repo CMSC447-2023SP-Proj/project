@@ -7,6 +7,7 @@ import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 import NotificationImportantRoundedIcon from '@mui/icons-material/NotificationImportantRounded';
 import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
+import Dog from "../../assets/doglogo.png"
 import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -40,7 +41,7 @@ const Navbar = () => {
                 <EmailRoundedIcon/>
                 <NotificationImportantRoundedIcon/>
                 <div className="user">
-                    <img src={currentUser.profilePic} alt=""/>
+                    <img src={Dog} alt=""/>
                     <span>{currentUser.name}</span>
                 </div>
             </div>
