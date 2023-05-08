@@ -1,9 +1,15 @@
 .settings {
-    height: 100vh;
+    height: 130vh;
     background-color: rgb(255,215,0);
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .top {
+        font-size: 50;
+        line-height: 100px;
+        justify-content: center;
+    }
 
     .card {
         width: 50%;
@@ -14,11 +20,7 @@
         overflow: hidden;
         justify-content: center;
 
-        .top {
-            font-size: 50;
-            line-height: 50px;
-            justify-content: center;
-        }
+
 
         .left {
 
@@ -52,7 +54,7 @@
             padding: 50px;
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 35px;
             justify-content: center;
             background-color: lightgray;
 
@@ -66,12 +68,22 @@
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
+    //align-items: center;
+
+
+    
+
+                label {
+                    border: none;
+                    justify-content: center;
+                }
 
                 input {
                     border: none;
                     border-bottom: 1px solid gray;
                     padding: 20px 10px;
                     justify-content: center;
+                    display: inline-block;
                 }
 
                 button {
@@ -82,7 +94,24 @@
                     color: white;
                     font-weight: bold;
                     cursor: pointer;
+                    justify-content: right;
+                    display: inline-block;
+                }
+
+                deleting_button {
+                    width: 50%;
+                    padding: 10px;
+                    border: none;
+                    background-color: black;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
                     justify-content: center;
+                }
+
+                warn {
+                    font-weight: 700;
+                    color: red;
                 }
             }
         }

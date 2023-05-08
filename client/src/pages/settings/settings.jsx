@@ -1,75 +1,82 @@
-import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { updateUserContext } from "../../context/settingsContext";
 import "./settings.scss";
+import { useState } from "react";
+import axios from "axios";
 
-const Settings = () => {
-    const [inputs, setInputs] = useState({
-        newUsername: "",
-    });
-    const [err, setErr] = useState(null);
 
-    const navigate = useNavigate()
-
-    const handleChange = (e) => {
-        setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-        console.log(inputs);
-    };
-    const { updateUsername } = useContext(updateUserContext);
-
-    const handleUserUpdate = async (e) => {
+const Register = () => {
+    const warningFlair = (e) => {
+        alert("Your account has been deleted");
         e.preventDefault();
-        try {
-            await UpdateUser(inputs);
-            navigate("/")
-        } catch (err) {
-            setErr(err.response.data);
+        console.log('Your account has been deleted');
         }
-    };
 
-    return (
-        <div className="login">
+    return(
+        <div className="settings">
             <div className="card">
-                <div className="left">
-                    <h1>Settings</h1>
-                    <p>
-                        bbbooboooedfjsfj,
-                        alias bazinga numquam ipsa exercitationem dignissimos, error nam,
-                        consequatur.
-                    </p>
-                    <span>Don't you have an account?</span>
-                    <Link to="/register">
-                        <button>Register</button>
-                    </Link>
-                </div>
-                <div className="left">
-                    <h1>Settings</h1>
-                    <p>
-                        bbbooboooedfjsfj,
-                        alias bazinga numquam ipsa exercitationem dignissimos, error nam,
-                        consequatur.
-                    </p>
-                    <span>Don't you have an account?</span>
-                    <Link to="/register">
-                        <button>Register</button>
-                    </Link>
-                </div>
                 <div className="right">
-                    <h1>Login</h1>
+                <h1>Settings</h1>
                     <form>
-                        <input
-                            type="text"
-                            placeholder="New Username"
-                            name="username"
-                            onChange={handleChange}
+                        <h3>Update Username</h3>
+                    <input 
+                      type="text" 
+                      placeholder="New Username"
+                      name="username"
+                      //onChange={handleChange} 
                         />
-                        {err && err}
-                        <button onClick={handleUserUpdate}>Update Username</button>
+                      <button>Update</button>
+
                     </form>
-                </div>
-            </div>
+                    <form>
+                        <h3>Change Password</h3>
+
+                    <input 
+                      type="password" 
+                      placeholder="New Password"
+                      name="password"
+                      //onChange={handleChange} 
+                        />
+                        <button>Update</button>
+
+                    </form>
+
+                    <form>
+                        <h3>Change Email</h3>
+
+                        <input
+                            type="email"
+                            placeholder="New Email"
+                            name="email"
+                        //onChange={handleChange} 
+                        />
+                        <button>Update</button>
+
+                    </form>
+
+                    <form>
+                        <h3>Update Major</h3>
+
+                        <input
+                            type="major"
+                            placeholder="New Major"
+                            name="major"
+                        //onChange={handleChange} 
+                        />
+                        <button>Update</button>
+
+                    </form>
+
+                    <form>
+                        <h3> Want to Delete your Account? </h3>
+                        <warn>  **** This can not be reversed ****</warn>
+                        <Link to="/login">
+
+                        <button onClick={warningFlair}>Delete Account</button>
+</Link>
+                        </form>
+              </div>
+          </div>
         </div>
     );
-};
-
-export default Settings;
+}
+export default Register;

@@ -11,6 +11,7 @@ import LeftBar from "./components/leftbar/LeftBar.jsx";
 import RightBar from "./components/rightbar/Rightbar";
 import Home from "./pages/home/Home.jsx";
 import Profile from "./pages/Profile/Profile";
+import Settings from "./pages/settings/settings"
 import "./style.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
@@ -75,7 +76,11 @@ function App() {
     {
       path: "/register",
       element: <Register />,
-    },
+      },
+      {
+          path: "/settings",
+          element: <Settings />,
+      },
   ]);
 
   return (
