@@ -71,8 +71,8 @@ const Register = () => {
                         <warn>  **** This can not be reversed ****</warn>
                         <Link to="/login">
 
-                        <button onClick={warningFlair}>Delete Account</button>
-</Link>
+                        <button>Delete Account</button>
+                        </Link>
                         </form>
               </div>
           </div>
