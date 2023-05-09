@@ -37,7 +37,7 @@ const Register = () => {
             <div className="card">
                 <div className="left">
                   <h1>Join the Family !</h1>
-                  <p> Do you wanna join the newest social media platform,
+                  <p className="registerParagraph"> Do you wanna join the newest social media platform,
                     Its sweeping the nation,
                     CODED BY UMBC STUDENTS, FOR UMBC STUDENTS,
                     Join today 

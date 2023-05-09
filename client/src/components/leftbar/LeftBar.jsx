@@ -1,22 +1,17 @@
 import "./leftBar.scss"
 import Friends from "../../assets/friends.png";
 import Groups from "../../assets/people.png";
-import Market from "../../assets/shop.png";
 import Watch from "../../assets/watching-a-movie.png";
 import Memories from "../../assets/selfie.png";
 import Settings from "../../assets/settings.png";
 import Events from "../../assets/planner.png";
-import Gaming from "../../assets/console.png";
 import Gallery from "../../assets/gallery.png";
 import Video from "../../assets/video.png";
 import Messages from "../../assets/letter.png";
-import Fund from "../../assets/funding.png";
-import Tutorials from "../../assets/meeting.png";
-import Courses from "../../assets/video-tutorials.png";
 import Dog from "../../assets/doglogo.png"
 import { AuthContext } from "../../context/authContext";
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const LeftBar = () => {
 
@@ -40,10 +35,6 @@ const LeftBar = () => {
             <span>Groups</span>
          </div>
          <div className="item">
-            <img src={Market} alt=""/>
-            <span>Market</span>
-         </div>
-         <div className="item">
             <img src={Watch} alt=""/>
             <span>Watch</span>
          </div>
@@ -52,10 +43,10 @@ const LeftBar = () => {
             <span>Memories</span>
          </div>
          <div className="item">
-                        <img src={Settings} alt="" />
-                        <Link to="/settings">
-                            <button>Settings</button>
-                        </Link>
+            <Link to="/settings">
+               <img src={Settings} alt="" />                   
+            </Link>
+            <span>Settings</span>
          </div>
 
          </div>
@@ -66,10 +57,6 @@ const LeftBar = () => {
             <div className="item">
             <img src={Events} alt=""/>
             <span>Events</span>
-         </div>
-         <div className="item">
-            <img src={Gaming} alt=""/>
-            <span>Gaming</span>
          </div>
          <div className="item">
             <img src={Gallery} alt=""/>
@@ -86,23 +73,6 @@ const LeftBar = () => {
          
          </div>
          <hr/>
-         <div className="menu">
-          <span> Others</span>
-          <div className="item">
-            <img src={Fund} alt=""/>
-            <span>Fundraiser</span>
-         </div>
-         
-         <div className="item">
-            <img src={Tutorials} alt=""/>
-            <span>Tutorials</span>
-         </div>
-         <div className="item">
-            <img src={Courses} alt=""/>
-            <span>Courses</span>
-         </div>
-
-         </div>
         </div>
         </div>
     )

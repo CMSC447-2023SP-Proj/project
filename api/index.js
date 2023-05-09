@@ -10,7 +10,7 @@ import cors from "cors";
 import multer from "multer";
 import cookieParser from "cookie-parser";
 
-//middlewares
+//middlewar to get credentials to carry
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Credentials", true);
   next();
@@ -23,6 +23,8 @@ app.use(
 );
 app.use(cookieParser());
 
+
+//TODO: Fix this disk storage
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "../client/public/upload");

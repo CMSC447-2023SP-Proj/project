@@ -21,21 +21,19 @@ const Login = () => {
     e.preventDefault();
     try {
       await login(inputs);
-      navigate("/")
     } catch (err) {
       setErr(err.response.data);
     }
+    navigate("/");
   };
 
   return (
     <div className="login">
       <div className="card">
         <div className="left">
-          <h1>Hello World.</h1>
+          <h1>Welcome Back!</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,
-            alias totam numquam ipsa exercitationem dignissimos, error nam,
-            consequatur.
+            Sign in and see what's happenning today at UMBC!
           </p>
           <span>Don't you have an account?</span>
           <Link to="/register">
@@ -58,7 +56,9 @@ const Login = () => {
               onChange={handleChange}
             />
             {err && err}
-            <button onClick={handleLogin}>Login</button>
+            <Link to="/">
+              <button onClick={handleLogin}>Login</button>
+              </Link>
           </form>
         </div>
       </div>

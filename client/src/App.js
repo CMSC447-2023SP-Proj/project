@@ -76,11 +76,11 @@ function App() {
     {
       path: "/register",
       element: <Register />,
-      },
-      {
-          path: "/settings",
-          element: <Settings />,
-      },
+    },
+    {
+      path: "/settings",
+      element: <Settings />,
+    },
   ]);
 
   return (

@@ -29,14 +29,14 @@ const Stories = () =>{
     return(
         <div className="stories">
              <div className="story">
-                <img src={currentUser.profilePic} alt="" />
-                <span>{currentUser.name}</span>
+                <img src="https://gritstarter.umbc.edu/s/1325/images/editor/crowdfunding/img_0759__1_.JPG" alt="" />
+                <span className="storyText">{currentUser.name}</span>
                 <button>+</button>
                 </div> 
             {stories.map(story=>(
                <div className="story" key={story.id}>
                 <img src={story.img} alt="" />
-                <span>{story.name}</span>
+                <span className="storyText">{story.name}</span>
 
                 </div> 
             ))}
