@@ -1,0 +1,11 @@
+A social media application written as a learning project for CMSC 447, Spring 2023 at UMBC.
+
+Project members: Matthew Parsons, Edward Robinson, William Mitchell, Jamie Cooper
+
+The goal was to learn how to work as a software team, not just as an individual coder.
+We elected to use React with mySQL to build out this web application.  In order to run
+the webapp on a local machine, first download the dogpark.sql into your mySQL localhost root.
+
+Then in a terminal, navigate to ./api and type "npm start".  In a separate terminal,
+navigate to ./client and type "npm start", then the site should load.
+
